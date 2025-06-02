@@ -15,7 +15,7 @@ function createWindow() {
 }
 
 ipcMain.on('save-reservation', (event, data) => {
-    const filePath = path.join(++dirname, 'reservations.json');
+    const filePath = path.join(__dirname, 'reservations.json');
     let reservations = [];
 
     if (fs.existsSync(filePath)) {
