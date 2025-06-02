@@ -5,7 +5,7 @@ export default function Navbar() {
         <div className='navigation'>
             <nav>
                 <Link to="/">Rezerwacje</Link>
-                <Link to="/shedule">Terminarz</Link>
+                <Link to="/schedule">Terminarz</Link>
                 <Link to="/settings">Ustawienia</Link>
             </nav>
         </div>
