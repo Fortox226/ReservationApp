@@ -1,0 +1,48 @@
+.calendar-wrapper {
+  padding: 20px;
+  overflow-x: auto;
+  margin-top: 35px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: 100px repeat(7, 1fr);
+  grid-auto-rows: 50px;
+  border: 1px solid #ccc;
+}
+
+.calendar-header {
+  background: #f3f3f3;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  color: #1e1e1e;
+}
+
+.calendar-hour {
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  color: #1e1e1e;
+}
+
+.calendar-cell {
+  border: 1px solid #eee;
+  background: #fff;
+  color: #1e1e1e;
+}
+
+.calendar-cell.has-reservation {
+  background-color: #e0ffe0;
+  border: 1px solid #66cc66;
+}
+
+
+.empty-cell {
+  background: transparent;
+  border: none;
+}

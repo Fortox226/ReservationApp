@@ -39,16 +39,6 @@ export default function Home() {
                     <input type="time" value={time} onChange={e => setTime(e.target.value)} placeholder="Godzina" required /><br />
                     <button type="submit">Zapisz</button>
                 </form>
-
-                <hr />
-                <h3>Lista rezerwacji:</h3>
-                <ul>
-                    {reservations.map((r, i) => (
-                        <li key={i}>
-                            <strong>{r.name}</strong> - {r.service} - {r.date} - {r.time}
-                        </li>
-                    ))}
-                </ul>
             </div> 
         </div>
     );
