@@ -39,6 +39,28 @@ ipcMain.handle('get-reservations', () => {
     return [];
 });
 
+ipcMain.handle('delete-reservations', () => {
+    const filePath = path.join(__dirname, 'reservations.json');
+  
+    if (fs.existsSync(filePath)) {
+      const rawData = fs.readFileSync(filePath);
+      const reservations = JSON.parse(rawData);
+  
+      const now = new Date();
+  
+      const filtered = reservations.filter(r => {
+        const resDate = new Date(`${r.date}T${r.time}`);
+        return resDate >= now;
+      });
+  
+      fs.writeFileSync(filePath, JSON.stringify(filtered, null, 2), 'utf-8');
+      return filtered; 
+    }
+  
+    return [];
+  });
+  
+
 app.whenReady().then(() => {
     createWindow();
 

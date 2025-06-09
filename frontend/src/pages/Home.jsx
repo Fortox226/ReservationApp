@@ -39,6 +39,12 @@ export default function Home() {
                     <input type="time" value={time} onChange={e => setTime(e.target.value)} placeholder="Godzina" required /><br />
                     <button type="submit">Zapisz</button>
                 </form>
+                <div onClick={async () => {
+                    await window.electron.invoke('delete-reservations');
+                    console.log('usunieto')
+                }}>
+                    Usun stare rezerwacje
+                </div>
             </div> 
         </div>
     );
